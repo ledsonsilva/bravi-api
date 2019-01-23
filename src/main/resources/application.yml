@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: bravi-api
+  datasource:
+    url: jdbc:h2:mem:bravi;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;INIT=CREATE SCHEMA IF NOT EXISTS bravi
+    driverClassName: org.h2.Driver
+    username: sa
+    data-password:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        default_schema: bravi
+    generate-ddl: true
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+  flyway:
+    enabled: true
