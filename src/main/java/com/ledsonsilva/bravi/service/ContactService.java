@@ -26,15 +26,46 @@ public class ContactService {
     @Autowired
     private ContactRepository contactRepository;
 
+    @Autowired
+    private PersonRepository personRepository;
+
+    /**
+     * Contact list by filter
+     *
+     * @param filter ContactDto
+     * @param page Pageable
+     * @return Page<Person>
+     */
+    public Page<Contact> findByFilter(ContactDto filter, Pageable page) {
+
+        Contact contact = this.mapperFacade.map(filter, Contact.class);
+
+        ExampleMatcher matcher = ExampleMatcher.matching()
+                .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING)
+                .withIgnoreCase();
+
+        return this.contactRepository.findAll(Example.of(contact, matcher), page);
+
+    }
+
     /**
      * Create Contact
      *
      * @param ContactDto ContactDto
      * @return Long
      */
-    public Long create(ContactDto ContactDto) {
+    public Long create(ContactDto contactDto) {
 
-        Contact contact = this.mapperFacade.map(ContactDto, Contact.class);
+        Optional<Person> person = this.personRepository.findById(contactDto.getPersonId());
+
+        Contact contact = this.mapperFacade.map(contactDto, Contact.class);
+
+        contact.setPerson(
+                person.orElseThrow(
+                        () -> new EntityNotFoundException("Contact with ID {" + contactDto.getPersonId() + "} Not Found")
+                )
+        );
+
         return this.contactRepository.save(contact).getId();
     }
 

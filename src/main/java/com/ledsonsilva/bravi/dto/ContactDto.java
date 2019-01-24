@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -15,10 +16,8 @@ public class ContactDto {
     @NotBlank
     private String contact;
 
-    @NotBlank
     private TypeContact typeContact;
 
-    @NotBlank
     private Long personId;
 
 }
