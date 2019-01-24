@@ -14,10 +14,10 @@ Major resource components supported by the Bravi API are:
 
 List persons parameters:
 
-`?name=example`: Filter by name
-`?page=0`: Current page for pagination
-`?size=10`: Max records
-`?sort={id, desc}`: Order by
+`?name=example`: Filter by name  
+`?page=0`: Current page for pagination  
+`?size=10`: Max records  
+`?sort={id, desc}`: Order by  
 
 Created person payload:
 ```json
@@ -38,11 +38,11 @@ Created person payload:
 
 List contacts parameters:
 
-`?contact=example`: Filter by contact
-`?typeContact=PHONE`: Filter by type
-`?page=0`: Current page for pagination
-`?size=10`: Max records
-`?sort={id, desc}`: Order by
+`?contact=example`: Filter by contact  
+`?typeContact=PHONE`: Filter by type  
+`?page=0`: Current page for pagination  
+`?size=10`: Max records  
+`?sort={id, desc}`: Order by  
 
 Created contact payload:
 
