@@ -1,7 +1,9 @@
 package com.ledsonsilva.bravi.controller;
 
 import com.ledsonsilva.bravi.domain.entity.Person;
+import com.ledsonsilva.bravi.dto.ContactDto;
 import com.ledsonsilva.bravi.dto.PersonDto;
+import com.ledsonsilva.bravi.service.ContactService;
 import com.ledsonsilva.bravi.service.PersonService;
 import com.ledsonsilva.bravi.util.PaginationUtil;
 import ma.glasnost.orika.MapperFacade;
@@ -22,6 +24,9 @@ public class PersonController {
 
     @Autowired
     private PersonService personService;
+
+    @Autowired
+    private ContactService contactService;
 
     @Autowired
     private MapperFacade mapperFacade;
@@ -62,5 +67,11 @@ public class PersonController {
     void delete(@PathVariable("personId") Long id) {
 
         this.personService.delete(id);
+    }
+
+    @GetMapping(value = "/{personId}/contacts")
+    ResponseEntity<List<ContactDto>> findContactByPersonId(@PathVariable("personId") Long id) {
+
+        return new ResponseEntity<>(this.contactService.findByPersonId(id), HttpStatus.OK);
     }
 }
