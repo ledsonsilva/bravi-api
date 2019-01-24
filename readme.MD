@@ -28,7 +28,7 @@ Created person payload:
 
 - Contacts
 
-| Http      | Resource                - | Return                            |
+| Http      | Resource                  | Return                            |
 |:----------|:--------------------------|:----------------------------------|
 | GET       | `/contacts`               | HTTP 200 - Return a list of all contacts
 | POST      | `/contacts`               | HTTP 201 - Return id
