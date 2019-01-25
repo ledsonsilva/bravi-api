@@ -2,6 +2,7 @@
 
 - Java 8+
 - Maven
+- Docker
 
 ## Build project with docker
 
