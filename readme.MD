@@ -76,3 +76,9 @@ Created contact payload:
     "typeContact": "PHONE",
     "personId": 1
 }
+```
+
+### Contact
+
+Email: ledson.dev@gmail.com  
+Phone: 61 991740585
