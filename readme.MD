@@ -20,6 +20,13 @@ Running:
 http://localhost:8001/
 ```
 
+## Balance Brackets function
+
+Unit tests run on project build.
+
+- Class implementation `src/main/java/com.ledsonsilva/util/BalanceBracketsUtil.java`
+- Created unit tests in `test/java/util/BalanceBracketsUtilTest.java` to simulate the scenarios of valid and invalid expressions.
+
 ## Resource components
 Major resource components supported by the Bravi API are:
 
