@@ -1,3 +1,25 @@
+## Pre Requisits
+
+- Java 8+
+- Maven
+
+## Build project with docker
+
+Build image:
+```
+$ ./mvnw clean package dockerfile:build
+```
+
+Run container:
+```
+$ docker run -d --name bravi-api -p 8001:8080 ledson/bravi-app
+```
+
+Running:
+```
+http://localhost:8001/
+```
+
 ## Resource components
 Major resource components supported by the Bravi API are:
 
